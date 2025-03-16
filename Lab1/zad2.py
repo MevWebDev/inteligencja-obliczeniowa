@@ -2,7 +2,7 @@ import math
 import random
 import matplotlib.pyplot as plt
 
-def czyTrafi(kąt):
+def strzał(kąt):
     wysokość = 100
     prędkość = 50
     g = 9.81
@@ -25,7 +25,7 @@ def main():
     
     while True:
         kąt = input("Podaj kąt strzału: ")
-        d, prędkość, cos_alpha, sin_alpha, wysokość, g = czyTrafi(kąt)
+        d, prędkość, cos_alpha, sin_alpha, wysokość, g = strzał(kąt)
         
        
 
@@ -50,12 +50,11 @@ def main():
             plt.savefig("trajektoria.png")
             plt.close()
             print("Wykres zapisany jako trajektoria.png.")
+            break
         else:
             print("Nie trafione")
 
         
-        if abs(d - cel) <= 5:
-            break
 
 if __name__ == '__main__':
     main()
