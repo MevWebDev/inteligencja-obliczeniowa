@@ -30,7 +30,7 @@ for activation in activations:
     # Create and train model with this activation
     mlp = MLPClassifier(
         hidden_layer_sizes=hidden_layer, 
-        max_iter=50000, 
+        max_iter=500, 
         random_state=randomstate,
         activation=activation
     )
