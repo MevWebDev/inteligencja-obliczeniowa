@@ -84,42 +84,4 @@ for i in range(25):
     plt.xlabel(predicted_labels[i])
 plt.show()
 
-#1. reshape zmienia z tablicy 2x2 na tablice 4x4 
-#   1 na końcu oznacza jeden kanał (skala szarości),
-#   float32 zamienia piksele na liczby zmiennoprzecinkowe,
-#   /255 normalizuje na zakres 0-1
-
-
-#2. warstwa wejściowa ->
-#  -> Conv2D wyłapuje wzorce, relu zamienia <0 na 0 i
-#  zwraca mapy cech 
-#  -> MaxPooling2D wybiera maksymalna wartość
-#  z każdego okna 2x2 i redukuje danych o połowe
-#  -> Flatten Przekształca 3D tensor w 1D wektor
-#  -> Dense Łączy się ze wszystkimi wejściami i robi na nich ReLU
-#  -> Warstwa wyjściowa zamienia wartości w prawdopodobieństwa
-#  i zwraca prawdopodobienstwa dla kazdej cyfry
-
-#3. najwięcej jest pomyleń 4 z 9 i 7 z 9
-
-#4. krzywe wskazują na przeuczenie, ponieważ świetnie radzi sobie
-#  z danymi treningowymi ale gorzej na nowych danych
-
-#5. checkpoint = ModelCheckpoint(
-#     filepath='mnist_model_epoch{epoch:02d}_val_acc{val_accuracy:.4f}.h5',  # Nazwa pliku z numerem epoki i dokładnością
-#     monitor='val_accuracy',        # Metryka do monitorowania
-#     save_best_only=True,           # Zapisuj tylko gdy jest poprawa
-#     mode='max',                    # Maksymalizuj dokładność (dla straty użyj 'min')
-#     verbose=1                      # Pokaż informacje o zapisie
-# )
-
-
-# model.fit(
-#     train_images, 
-#     train_labels, 
-#     epochs=5, 
-#     batch_size=64, 
-#     validation_split=0.2,
-#     callbacks=[history, checkpoint]  # Dodaj checkpoint do listy callbacków
-# )
 

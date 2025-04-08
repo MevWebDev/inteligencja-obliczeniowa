@@ -49,7 +49,7 @@ model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["ac
 #ten compiler dał najwieksze wyniki
 
 # Continue training the model for 10 more epochs
-history = model.fit(X_train, y_train, epochs=100, validation_split=0.2, batch_size=4)
+history = model.fit(X_train, y_train, epochs=100, validation_split=0.2,)
 #im mniejszy batch size tym te krzywe są bardizej rozjechane góra dół
 
 # Save the updated model
@@ -103,7 +103,7 @@ plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=T
 
 #e. najlepiej poradził sobie optimize rmsprop
 
-#f. im mniejszy batch size tym większy rozstrzał wykresu
+#f. im mniejszy batch size tym większy rozstrzał wykresu, im wiekszy batch tym szybciej
 
 #g można powiedzieć, że model radzi sobie świetnie bo często daje 100% accuracy
 
